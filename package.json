@@ -1,0 +1,8 @@
+{
+  "name": "sky-one-9008a-test",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Synthetic practice repository for the Sky Engineering Factory pilot. No customer code.",
+  "scripts": { "test": "node --test" }
+}
