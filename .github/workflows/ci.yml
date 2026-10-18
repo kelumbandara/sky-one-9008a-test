@@ -1,0 +1,24 @@
+# CI for the pilot test repo (kelumbandara/sky-one-9008a-test).
+# Put this file at .github/workflows/ci.yml IN THAT REPO (the factory may not change workflow files, so a person adds it).
+# It runs the tests on every pull request and on every push to main, so a broken merge shows a red cross.
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
